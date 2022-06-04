@@ -1,11 +1,11 @@
 .header {
+  position: fixed;
   width: 100%;
   display: flex;
   justify-content: space-between;
   padding: 1rem 5rem;
   background-color: rgba(0, 0, 0, 0.2);
   color: #fff;
-  position: absolute;
   z-index: 10000;
   transition: 0.3s;
 }
@@ -38,9 +38,9 @@
 }
 
 .nav-list a {
- transition: .15s;
+  transition: 0.15s;
 }
 
 .nav-list a:hover {
- border-bottom: 3px solid lightgreen;
+  border-bottom: 3px solid lightgreen;
 }

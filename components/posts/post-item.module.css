@@ -1,0 +1,37 @@
+.post {
+  background-color: #555;
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.post a {
+  color: lightgreen;
+}
+
+.image {
+  width: 100%;
+  max-height: 20rem;
+  overflow: hidden;
+}
+
+.image img {
+  object-fit: cover;
+}
+
+.content {
+  padding: 1.5rem;
+}
+
+.content h3 {
+  margin: 1rem 0;
+  font-size: 1.5rem;
+}
+
+.content time {
+  font-style: italic;
+  color: grey;
+}
+
+.content p {
+  line-height: 1rem;
+}

@@ -1,0 +1,17 @@
+.posts {
+ width: 90%;
+ max-width: 80rem;
+ margin: 2rem auto;
+}
+
+.posts h2 {
+ font-size: 1.5rem;
+ color: rgb(79, 79, 79);
+ text-align: center;
+}
+
+@media (min-width: 768px) {
+ .posts h2 {
+  font-size: 1.75rem;
+ }
+}

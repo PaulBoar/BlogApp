@@ -1,20 +1,24 @@
 .hero {
-  position: absolute;
+  position: relative;
   top: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 70vh;
+  width: 100vw;
+  min-height: 40rem;
   padding: 2rem;
   color: #fff;
   background-color: rgb(40, 49, 142);
-  background: url('../../public/imgs/forest-hero-big.jpg') no-repeat center;
+  background: url('../../public/imgs/forest-hero-big.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  -webkit-background-size: cover;
+  background-size: cover;
   z-index: 10;
 }
 
-.hero::after {
+/* .hero::after {
   content: '';
   position: absolute;
   top: 0;
@@ -23,7 +27,7 @@
   height: 100%;
   background-color: rgba(0, 0, 0, 0.4);
   z-index: -1;
-}
+} */
 
 .hero h1 {
   font-size: 4rem;
