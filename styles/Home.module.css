@@ -1,5 +1,6 @@
 .container {
-  padding: 0 2rem;
+  padding: 0 0rem;
+  /* background-color: #333; */
 }
 
 .main {
@@ -17,6 +18,8 @@
   flex: 1;
   padding: 2rem 0;
   border-top: 1px solid #eaeaea;
+  background-color: #333;
+  width: 100vw;
   justify-content: center;
   align-items: center;
 }
