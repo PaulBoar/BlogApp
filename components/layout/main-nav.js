@@ -1,6 +1,9 @@
 import Link from 'next/link';
 import styles from './main-nav.module.css'
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBars } from '@fortawesome/free-solid-svg-icons'
+
 function MainNav() {
   return (
     <header className={styles.header}>
@@ -18,6 +21,7 @@ function MainNav() {
             <Link href='/contact'>Contact</Link>
           </li>
         </ul>
+        <FontAwesomeIcon className={styles.burger} icon={faBars} />
       </nav> 
     </header>
   );

@@ -1,11 +1,17 @@
 .post {
-  background-color: #555;
+  background-color: rgb(69, 109, 105);
   text-align: center;
-  padding: 1.5rem;
+  padding: 0 0rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border-radius: 8px;
+  overflow: hidden;
+  height: auto;
 }
 
 .post a {
-  color: lightgreen;
+  color: #fff;
 }
 
 .image {
@@ -19,7 +25,7 @@
 }
 
 .content {
-  padding: 1.5rem;
+  padding: 1rem;
 }
 
 .content h3 {
@@ -29,9 +35,22 @@
 
 .content time {
   font-style: italic;
-  color: grey;
+  color: rgb(49, 49, 49);
 }
 
 .content p {
   line-height: 1rem;
 }
+
+.image {
+
+  width: 100%;
+
+}
+  
+  .img {
+    object-fit: contain;
+    width: 100% !important;
+    position: relative !important;
+    height: unset !important;
+  }

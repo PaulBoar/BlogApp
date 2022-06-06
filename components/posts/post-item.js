@@ -20,7 +20,7 @@ function PostItem({post}) {
       <Link href={pathLink}>
         <a>
           <div className={styles.image}>
-            <Image src={pathImage} alt={title} width={300} height={200}/>
+            <Image src={pathImage} alt={title} width={400} height={200}  />
           </div>
           <div className={styles.content}>
             <h3>{title}</h3>
