@@ -4,8 +4,9 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-    height: 100%;
-    background-color:rgb(20, 47, 20);
+  height: 100%;
+  background-color: rgb(20, 47, 20);
+  overflow-x: hidden;
 }
 
 a {
@@ -17,3 +18,16 @@ a {
   box-sizing: border-box;
 }
 
+footer {
+  height: 6rem;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  background-color: #333;
+}
+
+footer p {
+  font-size: 1rem;
+  color: #aaa;
+}
