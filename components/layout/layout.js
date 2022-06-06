@@ -6,6 +6,10 @@ function Layout(props) {
     <Fragment>
      <MainNav />
      <main>{props.children}</main>
+
+     <footer>
+       <p>Copyright 2022 BlogLife</p>
+     </footer>
     </Fragment>
   )
 }

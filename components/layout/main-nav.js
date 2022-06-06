@@ -9,7 +9,7 @@ function MainNav() {
     <header className={styles.header}>
        <Link href='/'> 
         <a className={styles.logo}>
-          <div className={styles.logo}>Blog<span>life</span></div>
+          <div className={styles.logo}>Blog<span>Life</span></div>
         </a>
        </Link> 
       <nav className={styles.nav}>
