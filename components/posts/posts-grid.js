@@ -9,7 +9,7 @@ function PostsGrid({posts}) {
 
  return <ul className={styles.grid}>
   {posts.map(post => {
-   return <PostItem key={post.slug} post={post} />
+   return <PostItem key={post.sys.id} post={post}/>
   })}
  </ul>
 }

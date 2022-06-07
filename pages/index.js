@@ -56,7 +56,7 @@ function HomePage({blogPost}) {
   return (
     <Fragment>
       <HeroHeader />
-      <PostsGrid posts={DUMMY_POSTS} />
+      <PostsGrid posts={blogPost}/>
     </Fragment>
   );
 }

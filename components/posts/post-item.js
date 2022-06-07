@@ -1,18 +1,19 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+
 
 import styles from './post-item.module.css';
 
 function PostItem({ post }) {
-  const { title, image, description, date, slug } = post;
+  const { title, description, thumbnail, image, readTime, postContent, date, slug } = post.fields;
 
-  const formattedDate = new Date(date).toLocaleDateString('en', {
+  const formattedDate = new Date(post.sys.createdAt).toLocaleDateString('en', {
     day: 'numeric',
     month: 'long',
     year: 'numeric',
   });
 
-  const pathImage = `/imgs/posts/${slug}/${image}`;
   const pathLink = `/posts/${slug}`;
 
   return (
@@ -21,7 +22,7 @@ function PostItem({ post }) {
             <Link href={pathLink}>
           <div className={styles.image}>
             <Image
-              src={pathImage}
+              src={`http:${thumbnail.fields.file.url}`}
               alt={title}
               width={400}
               height={200}
@@ -34,9 +35,14 @@ function PostItem({ post }) {
             <h3>{title}</h3>
       </Link>
             <time>{formattedDate}</time>
-            <p>{description}</p>
+            <p>{readTime}</p>
+            <div>
+              {description}
+            </div>
+            
           </div>
         </a>
+            {/* {documentToReactComponents(postContent)} */}
     </li>
   );
 }
