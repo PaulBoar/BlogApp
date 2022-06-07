@@ -4,11 +4,12 @@
   padding: 0 0rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: start;
   border-radius: 8px;
   overflow: hidden;
   color: #fff;
   width: 100%;
+  min-height: 33.25rem;
 }
 
 .post a {
@@ -52,14 +53,13 @@
     height: unset !important;
   } */
 
-@media (min-width: 1020px) {
+@media (min-width: 1024px) {
   .post {
-    padding: 0 1rem;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
     width: 100%;
-    min-height: 20rem;
+    min-height: 10.25rem;
   }
   .image {
     width: 50%;

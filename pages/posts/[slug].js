@@ -1,4 +1,7 @@
+import Image from 'next/image';
 import { createClient } from 'contentful';
+
+import styles from './[slug].module.css'
 
 const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID,
@@ -34,8 +37,11 @@ export const getStaticProps = async ({ params }) => {
 };
 
 function Post({blog}) {
+  const {featuredImage} = blog.fields
   console.log(blog)
-  return <div>Post</div>;
+  return <section className={styles['blog-post']}>
+    <Image src={`http:${featuredImage.fields.file.url}`} width={500} height={400}/>
+  </section>;
 }
 
 export default Post;

@@ -14,9 +14,17 @@
    grid-template-columns:  repeat(2, 1fr);
  }
 }
- @media (min-width: 1020px) {
+
+ @media (min-width: 1024px) {
   .grid {
    margin: 2rem 5rem;
    grid-template-columns:  repeat(1, 1fr);
+ }
+}
+
+ @media (min-width: 1280px) {
+  .grid {
+    max-width: 65%;
+   margin: 2rem auto;
  }
 }
