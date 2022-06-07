@@ -1,4 +1,19 @@
 .blog-post {
- position: relative;
+ /* position: relative; */
+ display: flex;
+ flex-direction: column;
+ color:azure;
+ padding: 2rem;
+}
+
+.image {
  align-self: center;
+ position: relative;
+}
+
+@media (min-width: 768px) {
+ .blog-post {
+  top: 20%;
+  padding: 5rem;
+ }
 }

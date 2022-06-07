@@ -1,5 +1,5 @@
 .header {
-  position: fixed;
+  position: relative;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -68,6 +68,7 @@
 
   .logo {
     font-size: 3rem;
+    margin-left: 2rem;
   }
 
   .burger {

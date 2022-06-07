@@ -5,7 +5,7 @@ import styles from './layout.module.css'
 
 function Layout(props) {
   return (
-    <Fragment>
+    <Fragment className={styles.container}>
      <MainNav />
      <main>{props.children}</main>
 

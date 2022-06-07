@@ -4,7 +4,7 @@
   padding: 0 0rem;
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: flex-start;
   border-radius: 8px;
   overflow: hidden;
   color: #fff;
@@ -46,19 +46,11 @@
   line-height: 1rem;
 }
 
-/* .img {
-    object-fit: contain;
-    width: 100% !important;
-    position: relative !important;
-    height: unset !important;
-  } */
-
 @media (min-width: 1024px) {
   .post {
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    width: 100%;
     min-height: 10.25rem;
   }
   .image {

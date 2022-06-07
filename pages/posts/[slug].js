@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { createClient } from 'contentful';
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
 import styles from './[slug].module.css'
 
@@ -37,10 +38,18 @@ export const getStaticProps = async ({ params }) => {
 };
 
 function Post({blog}) {
-  const {featuredImage} = blog.fields
+  const {title, featuredImage, postContent} = blog.fields
+  // const width = featuredImage.fields.file.details.image.width
+  // const height = featuredImage.fields.file.details.image.height
   console.log(blog)
   return <section className={styles['blog-post']}>
-    <Image src={`http:${featuredImage.fields.file.url}`} width={500} height={400}/>
+    <div className={styles.image}>
+    <Image src={`http:${featuredImage.fields.file.url}`} width={720} height={400}/>
+    </div>
+    <div>
+     <h2> {title}</h2>
+     <div>{documentToReactComponents(postContent)}</div>
+    </div>
   </section>;
 }
 
