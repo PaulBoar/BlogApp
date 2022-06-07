@@ -1,13 +1,15 @@
 import { Fragment } from 'react';
 import MainNav from './main-nav'
 
+import styles from './layout.module.css'
+
 function Layout(props) {
   return (
     <Fragment>
      <MainNav />
      <main>{props.children}</main>
 
-     <footer>
+     <footer className={styles.footer}>
        <p>Copyright 2022 BlogLife</p>
      </footer>
     </Fragment>

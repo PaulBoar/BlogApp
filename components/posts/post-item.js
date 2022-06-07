@@ -35,10 +35,10 @@ function PostItem({ post }) {
             <h3>{title}</h3>
       </Link>
             <time>{formattedDate}</time>
-            <p>{readTime}</p>
             <div>
               {description}
             </div>
+            <p>estimated read time {readTime}</p>
             
           </div>
         </a>
