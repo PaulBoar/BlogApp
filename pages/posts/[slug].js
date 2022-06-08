@@ -39,10 +39,11 @@ export const getStaticProps = async ({ params }) => {
 };
 
 function Post({blog}) {
-  const {title, featuredImage, postContent} = blog.fields
+  const {title, featuredImage, postContent, slug} = blog.fields
   // const width = featuredImage.fields.file.details.image.width
   // const height = featuredImage.fields.file.details.image.height
   console.log(blog)
+
   return <section className={styles['blog-post']}>
     <div className={styles.image}>
     <Image src={`http:${featuredImage.fields.file.url}`} width={720} height={400}/>
@@ -50,10 +51,7 @@ function Post({blog}) {
     <div>
      <h2> {title}</h2>
      <div>{documentToReactComponents(postContent)}</div>
-     {/* <div className={styles.image}>
-     <Image src={`http:${postContent.content[8].data.target.fields.file.url}`} width={520} height={300} layout='responsive'></Image>
-     </div> */}
-     <CommentsSection />
+     <CommentsSection slug={slug} />
     </div>
   </section>;
 }
