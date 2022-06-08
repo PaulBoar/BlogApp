@@ -3,6 +3,7 @@ import { createClient } from 'contentful';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
 import styles from './[slug].module.css'
+import CommentsSection from '../../components/comments-section/comments-section';
 
 const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID,
@@ -49,6 +50,10 @@ function Post({blog}) {
     <div>
      <h2> {title}</h2>
      <div>{documentToReactComponents(postContent)}</div>
+     {/* <div className={styles.image}>
+     <Image src={`http:${postContent.content[8].data.target.fields.file.url}`} width={520} height={300} layout='responsive'></Image>
+     </div> */}
+     <CommentsSection />
     </div>
   </section>;
 }
