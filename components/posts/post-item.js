@@ -25,7 +25,7 @@ function PostItem({ post }) {
               src={`http:${thumbnail.fields.file.url}`}
               alt={title}
               width={400}
-              height={200}
+              height={215}
               layout='responsive'
             />
           </div>
