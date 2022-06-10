@@ -48,9 +48,9 @@ function Post({blog}) {
     <div className={styles.image}>
     <Image src={`http:${featuredImage.fields.file.url}`} width={720} height={400}/>
     </div>
-    <div>
+    <div className={styles.container}>
      <h2> {title}</h2>
-     <div>{documentToReactComponents(postContent)}</div>
+     <div className={styles.content}>{documentToReactComponents(postContent)}</div>
      <CommentsSection slug={slug} />
     </div>
   </section>;
