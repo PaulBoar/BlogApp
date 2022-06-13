@@ -1,0 +1,27 @@
+.container {
+ height: 100%;
+ margin: auto 0;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ background: #fff;
+ height: 75vh;
+}
+
+.box {
+ display: flex;
+ flex-direction: column;
+ background-color: #ccc;
+ padding: 1rem;
+ box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.box form {
+ display: flex;
+ flex-direction: column;
+}
+
+.box input {
+ padding: 0.25rem
+
+}

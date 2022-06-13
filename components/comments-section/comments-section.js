@@ -30,12 +30,9 @@ function CommentsSection({ slug }) {
     }
     setComments(loadedComments);
   }
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     fetchComments();
-  //   }, 1000);
-  //   [comment];
-  // });
+  useEffect(() => {
+    fetchComments();
+  }, []);
 
   async function postComments(comment) {
     const res = await fetch(
@@ -52,6 +49,21 @@ function CommentsSection({ slug }) {
     console.log(data);
   }
   console.log(comment);
+
+  const handleRemove = async (i) => {
+    const res = await fetch(
+      `https://blogapp-c6647-default-rtdb.firebaseio.com/comments/${slug}.json`,
+      {
+        method: 'DELETE',
+        body: JSON.stringify(comment),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      }
+    );
+    console.log(slug)
+    const data = await res.json();
+  }
 
   return (
     <div>
@@ -73,8 +85,9 @@ function CommentsSection({ slug }) {
       <div>
         Forum
         {comments &&
-          comments.map((com) => {
-            return <p>{com.comment}</p>;
+          comments.map((com, i) => {
+            return <p>{com.comment}
+            <button onClick={i => handleRemove(i)}>delete</button></p>;
           })}
       </div>
     </div>

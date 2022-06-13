@@ -17,10 +17,10 @@ function MainNav() {
       <nav className={styles.nav}>
         <ul className={styles['nav-list']}>
           <li>
-            <Link href='/posts'>All Posts</Link>
+            <Link href='/about'>About</Link>
           </li>
           <li>
-            <Link href='/contact'>Contact</Link>
+            <Link href='/log-in'>Log in</Link>
           </li>
         </ul>
         <FontAwesomeIcon className={styles.burger} icon={faBars} />
