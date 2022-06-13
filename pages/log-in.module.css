@@ -4,7 +4,7 @@
  display: flex;
  justify-content: center;
  align-items: center;
- background: #fff;
+ background: #aaa;
  height: 75vh;
 }
 
@@ -14,6 +14,7 @@
  background-color: #ccc;
  padding: 1rem;
  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+ border-radius: 8px;
 }
 
 .box form {
@@ -22,6 +23,6 @@
 }
 
 .box input {
- padding: 0.25rem
-
+ padding: 0.25rem;
+ margin-bottom: .5rem;
 }
