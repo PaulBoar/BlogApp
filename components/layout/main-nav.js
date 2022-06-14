@@ -1,10 +1,19 @@
 import Link from 'next/link';
+import {useState, useEffect} from 'react'
 import styles from './main-nav.module.css';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 
-function MainNav() {
+function MainNav(props) {
+  const [isLogged, setIsLogged] = useState(false)
+  console.log(props.logged)
+  useEffect(() => {
+    setIsLogged(props.logged)
+  }, [])
+  console.log(isLogged)
+  console.log('render mainanv')
+console.log(props.name)
   return (
     <header className={styles.header}>
       <Link href='/'>
@@ -20,7 +29,7 @@ function MainNav() {
             <Link href='/about'>About</Link>
           </li>
           <li>
-            <Link href='/log-in'>Log in</Link>
+            {!props.logged ? <Link href='/log-in'>Login</Link> : <Link href='/log-in'>{props.name}</Link> }
           </li>
         </ul>
         <FontAwesomeIcon className={styles.burger} icon={faBars} />
