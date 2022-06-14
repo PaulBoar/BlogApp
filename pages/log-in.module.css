@@ -6,12 +6,14 @@
  align-items: center;
  background: #aaa;
  height: 77.5vh;
+ background-image: url(../public/imgs/Ocean.mp4);
 }
 
 .box {
  display: flex;
  flex-direction: column;
  background-color: #ccc;
+ min-width: 80%;
  padding: 1rem;
  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
  border-radius: 8px;
@@ -23,6 +25,49 @@
 }
 
 .box input {
- padding: 0.25rem;
+ padding: 0.35rem;
  margin-bottom: .5rem;
+}
+
+.box button {
+ padding: 0.5rem;
+ background-color:cornflowerblue;
+ color: white;
+ border: none;
+ margin: .5rem 0;
+ font-size: 1rem;
+ border-radius: 4px;
+ cursor: pointer;
+ transition: .2s;
+}
+
+.box button:first-of-type {
+ margin-top: 1.5rem;
+}
+
+.box button:first-of-type:hover {
+ background-color:rgb(70, 135, 255);
+}
+
+.box button:last-child {
+ background-color: #fff;
+ color: black;
+}
+
+.box button:last-child:hover {
+ background-color: rgb(244, 244, 244);
+
+}
+
+@media (min-width: 768px) {
+ .box {
+  background-color: rgb(226, 216, 216);
+  min-width: 40%;
+ }
+}
+@media (min-width: 1024px) {
+ .box {
+  background-color: rgb(226, 216, 216);
+  min-width: 20%;
+ }
 }
