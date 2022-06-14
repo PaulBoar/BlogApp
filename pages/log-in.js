@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Link from 'next/dist/client/link.js';
 import { auth } from '../firebase-config.js';
 import {
   createUserWithEmailAndPassword,
@@ -129,7 +130,7 @@ function LogIn(props) {
       ) : (
         <div>
           WELCOME {user?.email}
-          <button onClick={logout}>logout</button>
+          <Link href='/'>go to main page</Link>
         </div>
       )}
     </div>
