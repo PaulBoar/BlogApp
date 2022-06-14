@@ -14,6 +14,10 @@ function MainNav(props) {
   console.log(isLogged)
   console.log('render mainanv')
 console.log(props.name)
+
+const handleLogout = () => {
+  props.onLogout()
+}
   return (
     <header className={styles.header}>
       <Link href='/'>
@@ -29,7 +33,7 @@ console.log(props.name)
             <Link href='/about'>About</Link>
           </li>
           <li>
-            {!props.logged ? <Link href='/log-in'>Login</Link> : <Link href='/log-in'>{props.name}</Link> }
+            {!props.logged ? <Link href='/log-in'>Login</Link> : <a href='/' onClick={handleLogout}>Logout</a> }
           </li>
         </ul>
         <FontAwesomeIcon className={styles.burger} icon={faBars} />

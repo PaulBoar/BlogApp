@@ -3,6 +3,7 @@ import { auth } from '../firebase-config.js';
 import {
   createUserWithEmailAndPassword,
   onAuthStateChanged,
+  signInWithEmailAndPassword,
   signOut,
 } from 'firebase/auth';
 
@@ -46,11 +47,23 @@ function LogIn(props) {
   const handleLogin = async (e) => {
     e.preventDefault();
     console.log('lol');
+    try {
+      const user = signInWithEmailAndPassword(
+        auth,
+        loginEmail,
+        loginPassword,
+      );
+      setIsLogged(true);
+      props.onIsLogged(true);
+      console.log(user.email);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const logout = async () => {
     await signOut(auth)
-    setIsLogged(false);
+    setIsLogged(props.logout);
     props.onIsLogged(false);
     props.onIsLogged(isLogged);
   };

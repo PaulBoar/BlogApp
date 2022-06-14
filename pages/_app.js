@@ -15,9 +15,13 @@ const handleName = (props) => {
   console.log(props)
 }
 
+const handleLogout = () => {
+  setIsLog(false)
+}
+
   return (
-     <Layout isLogged={isLog} name={name}>
-      <Component {...pageProps} onIsLogged={handleIsLogged} onLoggedName={handleName} />
+     <Layout isLogged={isLog} name={name} onLogout={handleLogout}>
+      <Component {...pageProps} onIsLogged={handleIsLogged} onLoggedName={handleName} logout={isLog} />
       </Layout>  
   );
 }
