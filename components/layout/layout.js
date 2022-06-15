@@ -9,7 +9,7 @@ function Layout(props) {
   const handleLogout = () => {
     props.onLogout()
   }
-  console.log(props.user)
+  console.log(props)
   return (
     <div className={styles.container}>
      <MainNav logged={props.isLogged} user={props.user} onLogout={handleLogout}/>

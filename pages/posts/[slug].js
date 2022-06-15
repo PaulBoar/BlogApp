@@ -40,11 +40,8 @@ export const getStaticProps = async ({ params }) => {
 
 function Post({ blog, isLogged, user }) {
   const { title, featuredImage, postContent, slug } = blog.fields;
-  // const width = featuredImage.fields.file.details.image.width
-  // const height = featuredImage.fields.file.details.image.height
-  console.log(blog);
-  console.log(isLogged);
-  console.log(user + ' email?');
+
+  console.log(user.email + ' email?');
   
 
   return (
@@ -61,7 +58,7 @@ function Post({ blog, isLogged, user }) {
         <div className={styles.content}>
           {documentToReactComponents(postContent)}
         </div>
-        <CommentsSection slug={slug} logged={isLogged} />
+        <CommentsSection slug={slug} logged={isLogged} user={user} />
       </div>
     </section>
   );
