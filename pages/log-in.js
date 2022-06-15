@@ -22,11 +22,7 @@ function LogIn(props) {
   const [loginPassword, setLoginPassword] = useState('');
 
   const [cuser, setUser] = useState({});
-  useEffect(() => {
-    onAuthStateChanged(auth, (currentUser) => {
-      setUser(currentUser);
-    });
-  }, [handleLogin]);
+  
 
 console.log(cuser?.email + ' USER')
 console.log(cuser)
@@ -66,6 +62,12 @@ console.log(cuser)
       setTouched(true)
     }
   };
+
+  useEffect(() => {
+    onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+    });
+  }, [handleLogin]);
 
   useEffect(() => {
   if (!props.isLogged) {
@@ -155,10 +157,12 @@ console.log(cuser)
       ) : (
         <div className={styles.welcome}>
           <h2>WELCOME {cuser?.email.split('@', 1)[0]}</h2>
+          <div className={styles.actions}>
           <Link href='/'>
             <a>go to main page</a>
           </Link>
           <button className={styles.btn} onClick={logout}>logout</button>
+          </div>
         </div>
       )}
     </div>

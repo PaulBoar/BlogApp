@@ -37,8 +37,9 @@
 }
 
 .btn {
+ width: 80%;
  padding: 0.5rem;
- background-color:cornflowerblue;
+ background-color:rgb(92, 138, 222);
  color: white;
  border: none;
  margin: .5rem 0;
@@ -49,7 +50,7 @@
 }
 
 .btn:hover {
- background-color:rgb(70, 135, 255);;
+ background-color:rgb(80, 126, 212)
 }
 
 .box button:first-of-type {
@@ -57,7 +58,7 @@
 }
 
 .box button:first-of-type:hover {
- background-color:rgb(70, 135, 255);
+ background-color:rgb(59, 62, 69);
 }
 
 .box button:last-child {
@@ -70,16 +71,20 @@
 }
 
 .welcome {
+ height: 70%;
+ width: 80%;
  display:flex;
  flex-direction: column;
- background-color:rgba(70, 135, 255, 0.7);
- box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
+ justify-content: space-around;
+ background-color:rgba(70, 135, 255, 0.9);
+ box-shadow: 2px 2px 6px rgba(0, 0, 0, .6);
  color: #eee;
  padding: 2rem;
  border-radius: 6px;
 }
 
 .welcome a {
+ width: 80%;
  font-size: 1.25rem;
  background-color:rgba(15, 87, 223, 0.8);
  display: inline-block;
@@ -94,13 +99,33 @@
  background-color:rgb(22, 105, 231);
 }
 
+.actions {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+}
+
 @media (min-width: 768px) {
  .box {
   min-width: 40%;
+ }
+ .welcome {
+  height: 50%;
+  width: 50%;
+ }
+ .welcome a {
+  padding: .75rem;
+ }
+ .welcome button {
+  padding: .75rem;
  }
 }
 @media (min-width: 1024px) {
  .box {
   min-width: 20%;
+ }
+ .welcome {
+  height: 40%;
+  width: 30%;
  }
 }
