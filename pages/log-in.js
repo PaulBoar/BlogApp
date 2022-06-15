@@ -26,9 +26,10 @@ function LogIn(props) {
     onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
     });
-  }, []);
+  }, [handleLogin]);
 
 console.log(cuser?.email + ' USER')
+console.log(cuser)
 
   const handleRegister = async (e) => {
     e.preventDefault();
@@ -43,7 +44,6 @@ console.log(cuser?.email + ' USER')
       props.onIsLogged(true);
       console.log(user.email)
       props.onUser(user.email)
-      // props.onLoggedName(registerName);
     } catch (error) {
       console.log(error);
     }
@@ -58,8 +58,8 @@ console.log(cuser?.email + ' USER')
       setIsLogged(true);
       console.log(user)
       props.onIsLogged(true);
-      props.onUser(cuser.email)
-      console.log(cuser.email);
+      await props.onUser(user)
+      console.log(cuser);
     } catch (error) {
       console.log(error);
       setHasError(true)
@@ -106,7 +106,7 @@ console.log(cuser?.email + ' USER')
           value={loginPassword}
           onChange={(e) => setLoginPassword(e.target.value)}
         />
-        {hasError && touched && <p>wrog email or password</p>}
+        {hasError && touched && <p>wrong email or password</p>}
         <button className={styles.btn} type='submit'>Login</button>
         <button className={styles.btn} type='button' onClick={() => setWantRegister(true)}>
           Register
