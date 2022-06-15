@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 
 import styles from './comments-section.module.css';
 
-function CommentsSection({ slug }) {
+function CommentsSection({ slug, logged }) {
   const [comment, setComment] = useState('');
   const [comments, setComments] = useState([]);
 
@@ -30,6 +30,7 @@ function CommentsSection({ slug }) {
     }
     setComments(loadedComments);
   }
+  
   useEffect(() => {
     fetchComments();
   }, []);
@@ -64,7 +65,7 @@ function CommentsSection({ slug }) {
     console.log(slug)
     const data = await res.json();
   }
-
+console.log(logged)
   return (
     <div>
       <form className={styles.form} onSubmit={addCommentHandler}>
@@ -78,7 +79,7 @@ function CommentsSection({ slug }) {
           value={comment}
           onChange={handleAddComment}
         />
-        <button type='submit' className={styles.btn}>
+        <button disabled={!logged} type='submit' className={styles.btn}>
           Add comment
         </button>
       </form>

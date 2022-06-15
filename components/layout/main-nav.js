@@ -7,13 +7,18 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 function MainNav(props) {
   const [isLogged, setIsLogged] = useState(false)
-  console.log(props.logged)
+
   useEffect(() => {
-    setIsLogged(props.logged)
-  }, [])
+    if (props.user) {
+      setIsLogged(props.logged)
+    }
+  }, [props.user])
+
+  console.log(props.user)
   console.log(isLogged)
+  console.log(props.logged)
   console.log('render mainanv')
-console.log(props.name)
+  console.log('render mainanv')
 
 const handleLogout = () => {
   props.onLogout()

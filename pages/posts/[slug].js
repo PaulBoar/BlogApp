@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { createClient } from 'contentful';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
-import styles from './[slug].module.css'
+import styles from './[slug].module.css';
 import CommentsSection from '../../components/comments-section/comments-section';
 
 const client = createClient({
@@ -28,32 +28,43 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps = async ({ params }) => {
-  const {items} = await client.getEntries({
+  const { items } = await client.getEntries({
     content_type: 'blog',
-    'fields.slug': params.slug
+    'fields.slug': params.slug,
   });
-  
+
   return {
     props: { blog: items[0] },
   };
 };
 
-function Post({blog}) {
-  const {title, featuredImage, postContent, slug} = blog.fields
+function Post({ blog, isLogged, user }) {
+  const { title, featuredImage, postContent, slug } = blog.fields;
   // const width = featuredImage.fields.file.details.image.width
   // const height = featuredImage.fields.file.details.image.height
-  console.log(blog)
+  console.log(blog);
+  console.log(isLogged);
+  console.log(user + ' email?');
+  
 
-  return <section className={styles['blog-post']}>
-    <div className={styles.image}>
-    <Image src={`http:${featuredImage.fields.file.url}`} width={720} height={400}/>
-    </div>
-    <div className={styles.container}>
-     <h2> {title}</h2>
-     <div className={styles.content}>{documentToReactComponents(postContent)}</div>
-     <CommentsSection slug={slug} />
-    </div>
-  </section>;
+  return (
+    <section className={styles['blog-post']}>
+      <div className={styles.image}>
+        <Image
+          src={`http:${featuredImage.fields.file.url}`}
+          width={720}
+          height={400}
+        />
+      </div>
+      <div className={styles.container}>
+        <h2> {title}</h2>
+        <div className={styles.content}>
+          {documentToReactComponents(postContent)}
+        </div>
+        <CommentsSection slug={slug} logged={isLogged} />
+      </div>
+    </section>
+  );
 }
 
 export default Post;

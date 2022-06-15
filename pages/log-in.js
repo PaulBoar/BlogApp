@@ -13,61 +13,77 @@ import styles from './log-in.module.css';
 function LogIn(props) {
   const [wantRegister, setWantRegister] = useState(false);
   const [isLogged, setIsLogged] = useState(false);
+  const [hasError, setHasError] = useState(false)
+  const [touched, setTouched] = useState(false)
   const [registerName, setRegisterName] = useState('');
   const [registerEmail, setRegisterEmail] = useState('');
   const [registerPassword, setRegisterPassword] = useState('');
   const [loginEmail, setLoginEmail] = useState('');
   const [loginPassword, setLoginPassword] = useState('');
 
-  const [user, setUser] = useState({});
+  const [cuser, setUser] = useState({});
   useEffect(() => {
     onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
     });
   }, []);
 
+console.log(cuser?.email + ' USER')
+
   const handleRegister = async (e) => {
     e.preventDefault();
     console.log('first');
     try {
-      const user = createUserWithEmailAndPassword(
+      const user = await createUserWithEmailAndPassword(
         auth,
         registerEmail,
         registerPassword,
-        registerName,
       );
       setIsLogged(true);
       props.onIsLogged(true);
-      props.onLoggedName(registerName)
-      console.log(user.email);
+      console.log(user.email)
+      props.onUser(user.email)
+      // props.onLoggedName(registerName);
     } catch (error) {
       console.log(error);
     }
   };
+  console.log(cuser?.email);
 
   const handleLogin = async (e) => {
     e.preventDefault();
     console.log('lol');
     try {
-      const user = signInWithEmailAndPassword(
-        auth,
-        loginEmail,
-        loginPassword,
-      );
+      const user = await signInWithEmailAndPassword(auth, loginEmail, loginPassword);
       setIsLogged(true);
+      console.log(user)
       props.onIsLogged(true);
-      console.log(user.email);
+      props.onUser(cuser.email)
+      console.log(cuser.email);
     } catch (error) {
       console.log(error);
+      setHasError(true)
+      setTouched(true)
     }
   };
 
-  const logout = async () => {
-    await signOut(auth)
-    setIsLogged(props.logout);
-    props.onIsLogged(false);
-    props.onIsLogged(isLogged);
+  useEffect(() => {
+  if (!props.isLogged) {
+    console.log('logging out')
+     signOut(auth)
+  }}, [])
+
+  const logout =  () => {
+     signOut(auth)
+    props.onUser('')
   };
+
+  const blurHandler = () => {
+    setTouched(false)
+  }
+
+
+  const inputClasses = hasError && touched ? `${styles.invalid}` : ''
 
   let logIn = (
     <>
@@ -77,18 +93,22 @@ function LogIn(props) {
         <input
           type='text'
           placeholder='email...'
+          className={inputClasses}
           value={loginEmail}
           onChange={(e) => setLoginEmail(e.target.value)}
+          onBlur={blurHandler}
         />
         <label>Password</label>
         <input
           type='password'
           placeholder='password...'
+          className={inputClasses}
           value={loginPassword}
           onChange={(e) => setLoginPassword(e.target.value)}
         />
-        <button type='submit'>Login</button>
-        <button type='button' onClick={() => setWantRegister(true)}>
+        {hasError && touched && <p>wrog email or password</p>}
+        <button className={styles.btn} type='submit'>Login</button>
+        <button className={styles.btn} type='button' onClick={() => setWantRegister(true)}>
           Register
         </button>
       </form>
@@ -100,7 +120,12 @@ function LogIn(props) {
       <h2>Sign up</h2>
       <form onSubmit={handleRegister}>
         <label>Username</label>
-        <input type='text' placeholder='name...' value={registerName} onChange={e => setRegisterName(e.target.value)} />
+        <input
+          type='text'
+          placeholder='name...'
+          value={registerName}
+          onChange={(e) => setRegisterName(e.target.value)}
+        />
         <label>Email</label>
         <input
           type='text'
@@ -115,8 +140,8 @@ function LogIn(props) {
           value={registerPassword}
           onChange={(e) => setRegisterPassword(e.target.value)}
         />
-        <button type='submit'>Register</button>
-        <button type='button' onClick={() => setWantRegister(false)}>
+        <button className={styles.btn} type='submit'>Register</button>
+        <button className={styles.btn} type='button' onClick={() => setWantRegister(false)}>
           Login
         </button>
       </form>
@@ -125,12 +150,15 @@ function LogIn(props) {
 
   return (
     <div className={styles.container}>
-      {!isLogged ? (
+      {!cuser?.email ? (
         <div className={styles.box}>{wantRegister ? register : logIn}</div>
       ) : (
-        <div>
-          WELCOME {user?.email}
-          <Link href='/'>go to main page</Link>
+        <div className={styles.welcome}>
+          <h2>WELCOME {cuser?.email.split('@', 1)[0]}</h2>
+          <Link href='/'>
+            <a>go to main page</a>
+          </Link>
+          <button className={styles.btn} onClick={logout}>logout</button>
         </div>
       )}
     </div>
