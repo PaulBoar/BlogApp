@@ -6,13 +6,15 @@
  align-items: center;
  background: #aaa;
  height: 77.5vh;
- background-image: url(../public/imgs/Ocean.mp4);
+ background-image: url(../public/imgs/loginImage.jpg);
+ background-repeat: no-repeat;
+ background-size: cover;
 }
 
 .box {
  display: flex;
  flex-direction: column;
- background-color: #ccc;
+ background-color: rgba(244, 244, 244, .8);
  min-width: 80%;
  padding: 1rem;
  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
@@ -29,7 +31,12 @@
  margin-bottom: .5rem;
 }
 
-.box button {
+.invalid {
+ background-color: rgba(200, 137, 137, 0.9);
+ border-color: rgb(225, 15, 15);
+}
+
+.btn {
  padding: 0.5rem;
  background-color:cornflowerblue;
  color: white;
@@ -39,6 +46,10 @@
  border-radius: 4px;
  cursor: pointer;
  transition: .2s;
+}
+
+.btn:hover {
+ background-color:rgb(70, 135, 255);;
 }
 
 .box button:first-of-type {
@@ -56,18 +67,40 @@
 
 .box button:last-child:hover {
  background-color: rgb(244, 244, 244);
+}
 
+.welcome {
+ display:flex;
+ flex-direction: column;
+ background-color:rgba(70, 135, 255, 0.7);
+ box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
+ color: #eee;
+ padding: 2rem;
+ border-radius: 6px;
+}
+
+.welcome a {
+ font-size: 1.25rem;
+ background-color:rgba(15, 87, 223, 0.8);
+ display: inline-block;
+ text-align: center;
+ border-radius: 6px;
+ padding: 0.35rem;
+ transition: 0.2s;
+}
+
+
+.welcome a:hover {
+ background-color:rgb(22, 105, 231);
 }
 
 @media (min-width: 768px) {
  .box {
-  background-color: rgb(226, 216, 216);
   min-width: 40%;
  }
 }
 @media (min-width: 1024px) {
  .box {
-  background-color: rgb(226, 216, 216);
   min-width: 20%;
  }
 }
