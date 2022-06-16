@@ -26,11 +26,11 @@ main {
 }
 
 footer {
-  height: 6rem;
+  height: auto;
+  margin-top: auto;
   padding: 0.5rem;
   display: flex;
   justify-content: center;
-  align-items: flex-end;
   background-color: #222;
 }
 

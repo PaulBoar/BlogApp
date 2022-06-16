@@ -41,7 +41,7 @@ export const getStaticProps = async ({ params }) => {
 function Post({ blog, isLogged, user }) {
   const { title, featuredImage, postContent, slug } = blog.fields;
 
-  console.log(user.email + ' email?');
+  console.log(user?.email + ' email?');
   
 
   return (

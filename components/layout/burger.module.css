@@ -1,7 +1,5 @@
 .burger {
   position: fixed;
- /*top: 5%;
- left: 2rem; */
  margin-right: 1rem;
  display: flex;
  flex-direction: column;
@@ -19,7 +17,6 @@
  outline: none;
 }
 
-
 .burger div {
  width: 2rem;
  height: 0.25rem;
@@ -28,4 +25,10 @@
  transition: all 0.3s linear;
  position: relative;
  transform-origin: 1px;
+}
+
+@media (min-width: 768px) {
+ .burger {
+  display: none;
+ }
 }
