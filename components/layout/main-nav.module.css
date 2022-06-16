@@ -29,10 +29,6 @@
   align-items: center;
 }
 
-.burger {
-  font-size: 1.75rem;
-}
-
 .nav-list {
   display: none;
 }
@@ -44,6 +40,10 @@
 
 .nav-list a:hover {
   border-bottom: 3px solid lightgreen;
+}
+
+.menu-item {
+  font-size: 1.25rem;
 }
 
 @media (min-width: 768px) {
