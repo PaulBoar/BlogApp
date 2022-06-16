@@ -10,11 +10,12 @@ console.log(user?.user?.email)
     setComment(e.target.value);
   };
 
-  const addCommentHandler = (e) => {
+  const addCommentHandler = async (e) => {
     e.preventDefault();
 
-    postComments({ comment: comment, author: user?.user?.email });
+    await postComments({ comment: comment, author: user?.user?.email });
     setComment('');
+    fetchComments()
   };
 
   let loadedComments = [];
@@ -83,11 +84,11 @@ console.log(logged)
           Add comment
         </button>
       </form>
-      <div>
         Forum
+      <div className={styles.comments}>
         {comments &&
           comments.map((com, i) => {
-            return <p>{com.comment} <span>{com.author}</span></p>;
+            return <div key={com.id} className={styles.comment}><span>{com.author.split('@',1)[0]}</span><p>{com.comment} </p></div>;
           })}
       </div>
     </div>

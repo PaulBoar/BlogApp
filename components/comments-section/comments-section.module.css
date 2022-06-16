@@ -17,3 +17,24 @@
  padding: 0.5rem;
  min-width: 5rem;
 }
+
+.comments {
+ padding: 1.5rem 0.5rem;
+ background-color: #666;
+}
+
+.comment {
+ display: flex;
+ margin-bottom: .75rem;
+}
+
+.comment span {
+ font-size: 0.75rem;
+ min-width: 5rem;
+ padding-left: 0.5rem;
+}
+
+.comment p {
+ margin: 0;
+ margin-left: 1rem;
+}
