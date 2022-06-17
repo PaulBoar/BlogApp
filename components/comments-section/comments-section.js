@@ -87,8 +87,8 @@ console.log(logged)
         Forum
       <div className={styles.comments}>
         {comments &&
-          comments.map((com, i) => {
-            return <div key={com.id} className={styles.comment}><span>{com.author.split('@',1)[0]}</span><p>{com.comment} </p></div>;
+          comments.map((com) => {
+            return <div key={com.id} className={styles.comment}><p>{com.comment} </p><span>by {com.author.split('@',1)[0]}</span></div>;
           })}
       </div>
     </div>

@@ -16,7 +16,7 @@ function Layout(props) {
      <main>{props.children}</main>
 
      <footer className={styles.footer}>
-       <p>Copyright 2022 BlogLife</p>
+       <p>Copyright 2022 Mindworks</p>
      </footer>
     </div>
   )
