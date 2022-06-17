@@ -48,15 +48,14 @@ function MainNav(props) {
       <nav className={styles.nav}>
         <ul className={styles['nav-list']}>
           <li>
-            <Link href='/about'>About</Link>
+            <Link href='/about'><a>About</a></Link>
           </li>
           <li>
             {!props.logged ? (
-              <Link href='/log-in'>Login</Link>
+              <Link href='/log-in'><a>Login</a></Link>
             ) : (
               <Link href='/'><a onClick={handleLogout}>
-                Logout
-              </a> </Link>
+                Logout</a></Link>
             )}
           </li>
         </ul>

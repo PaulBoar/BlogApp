@@ -61,7 +61,7 @@ console.log(cuser)
       setHasError(true)
       setTouched(true)
     }
-  });
+  }, [loginEmail, loginPassword]);
 
   useEffect(() => {
     onAuthStateChanged(auth, (currentUser) => {
@@ -73,7 +73,7 @@ console.log(cuser)
   if (!props.isLogged) {
     console.log('logging out')
      signOut(auth)
-  }}, [])
+  }}, [props.isLogged])
 
   const logout =  () => {
      signOut(auth)
@@ -158,9 +158,7 @@ console.log(cuser)
         <div className={styles.welcome}>
           <h2>WELCOME {cuser?.email.split('@', 1)[0]}</h2>
           <div className={styles.actions}>
-          <Link href='/'>
-            <a>go to main page</a>
-          </Link>
+          <Link href='/'><a>go to main page</a></Link>
           <button className={styles.btn} onClick={logout}>logout</button>
           </div>
         </div>
