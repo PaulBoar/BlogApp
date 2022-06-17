@@ -11,15 +11,12 @@ function MainNav(props) {
   const [isLogged, setIsLogged] = useState(false);
   const [showBurgerMenu, setShowBurgerMenu] = useState(false);
 
-  // useEffect(() => {
-  //   setShowBurgerMenu(false)
-  // }, [])
 
   useEffect(() => {
     if (props.user) {
       setIsLogged(props.logged);
     }
-  }, [props.user]);
+  }, [props.user, props.logged]);
 
   const handleLogout = () => {
     props.onLogout();

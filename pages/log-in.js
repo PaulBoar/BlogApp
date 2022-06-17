@@ -23,6 +23,7 @@ function LogIn(props) {
 
   const [cuser, setUser] = useState({});
   
+  const [onIsLogged, onUser] = props
 
 console.log(cuser?.email + ' USER')
 console.log(cuser)
@@ -37,15 +38,14 @@ console.log(cuser)
         registerPassword,
       );
       setIsLogged(true);
-      props.onIsLogged(true);
+      onIsLogged(true);
       console.log(user.email)
-      props.onUser(user.email)
+      onUser(user.email)
     } catch (error) {
       console.log(error);
     }
   };
   console.log(cuser?.email);
-
   const handleLogin = useCallback(async (e) => {
     e.preventDefault();
     console.log('lol');
@@ -53,8 +53,8 @@ console.log(cuser)
       const user = await signInWithEmailAndPassword(auth, loginEmail, loginPassword);
       setIsLogged(true);
       console.log(user)
-      props.onIsLogged(true);
-      await props.onUser(user)
+      onIsLogged(true);
+      await onUser(user)
       console.log(cuser);
     } catch (error) {
       console.log(error);
@@ -70,14 +70,14 @@ console.log(cuser)
   }, [handleLogin]);
 
   useEffect(() => {
-  if (!props.isLogged) {
+  if (!isLogged) {
     console.log('logging out')
      signOut(auth)
-  }}, [props.isLogged])
+  }}, [isLogged])
 
   const logout =  () => {
      signOut(auth)
-    props.onUser('')
+    onUser('')
   };
 
   const blurHandler = () => {
