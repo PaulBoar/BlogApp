@@ -38,3 +38,51 @@ footer p {
   font-size: 1rem;
   color: #aaa;
 }
+
+.spinner-wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.4);
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+/* .spinner {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  border: 6px solid gold;
+  animation: rotation .5s infinite linear;
+  z-index: 50;
+} */
+
+.spinner-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 40%;
+  /* left: 50%; */
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 6px solid #ccc;
+  border-top-color:royalblue;
+  z-index: 60;
+  animation: rotation .5s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg)
+  }
+}
