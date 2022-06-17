@@ -1,3 +1,7 @@
+.forum {
+ margin-top: 6rem;
+}
+
 .form {
  margin: 2rem 0;
 }
@@ -10,17 +14,40 @@
 
 .input {
  padding: 0.5rem;
+ margin-bottom: 1rem;
+ min-width: 5rem;
+ border-radius: 6px;
+ width: 100%;
 }
 
 .btn {
  display: inline-block;
+ font-size: 1rem;
  padding: 0.5rem;
  min-width: 5rem;
+ /* margin-left: 1rem; */
+ border-radius: 6px;
+ border-color: rgba(70, 135, 255, 0.9);
+ color: rgb(70, 135, 255);
+ background-color: transparent;
+ transition: 0.2s;
+}
+
+.btn:hover{
+ background-color: rgb(70, 135, 255);
+ color: #ddd;
+}
+
+.btn:disabled {
+ color: #bbb;
+ border-color: #bbb;
+ cursor:not-allowed;
 }
 
 .comments {
  padding: 1.5rem 0.5rem;
  background-color: #666;
+ border-radius: 8px;
 }
 
 .comment {
@@ -42,4 +69,10 @@
  margin: 0;
  margin-left: 1rem;
  max-width: 70%;
+}
+
+@media (min-width: 768px) {
+ .input {
+  min-width: 35rem;
+ }
 }

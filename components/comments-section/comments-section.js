@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 
 import styles from './comments-section.module.css';
 
@@ -37,6 +38,7 @@ console.log(user?.user?.email)
   }, []);
 
   async function postComments(comment, user ) {
+    if (comment === '') return
     const res = await fetch(
       `https://blogapp-c6647-default-rtdb.firebaseio.com/comments/${slug}.json`,
       {
@@ -68,7 +70,13 @@ console.log(user?.user?.email)
   }
 console.log(logged)
   return (
-    <div>
+    <div className={styles.forum}>
+      <div className={styles.comments}>
+        {comments &&
+          comments.map((com) => {
+            return <div key={com.id} className={styles.comment}><p>{com.comment} </p><span>by {com.author.split('@',1)[0]}</span></div>;
+          })}
+      </div>
       <form className={styles.form} onSubmit={addCommentHandler}>
         <label type='text' className={styles.label}>
           Write a comment
@@ -83,14 +91,11 @@ console.log(logged)
         <button disabled={!user} type='submit' className={styles.btn}>
           Add comment
         </button>
+        {!user && <><p>to add a comment login</p>
+        <Link href='/log-in'>
+          <button className={styles.btn}>Login</button>
+        </Link></>}
       </form>
-        Forum
-      <div className={styles.comments}>
-        {comments &&
-          comments.map((com) => {
-            return <div key={com.id} className={styles.comment}><p>{com.comment} </p><span>by {com.author.split('@',1)[0]}</span></div>;
-          })}
-      </div>
     </div>
   );
 }
