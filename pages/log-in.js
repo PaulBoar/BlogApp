@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Link from 'next/dist/client/link.js';
 import { auth } from '../firebase-config.js';
 import {
@@ -46,7 +46,7 @@ console.log(cuser)
   };
   console.log(cuser?.email);
 
-  const handleLogin = async (e) => {
+  const handleLogin = useCallback(async (e) => {
     e.preventDefault();
     console.log('lol');
     try {
@@ -61,7 +61,7 @@ console.log(cuser)
       setHasError(true)
       setTouched(true)
     }
-  };
+  });
 
   useEffect(() => {
     onAuthStateChanged(auth, (currentUser) => {

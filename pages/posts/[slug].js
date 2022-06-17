@@ -51,6 +51,7 @@ function Post({ blog, isLogged, user }) {
           src={`http:${featuredImage.fields.file.url}`}
           width={720}
           height={400}
+          alt='post image'
         />
       </div>
       <div className={styles.container}>

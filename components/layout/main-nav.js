@@ -54,9 +54,9 @@ function MainNav(props) {
             {!props.logged ? (
               <Link href='/log-in'>Login</Link>
             ) : (
-              <a href='/' onClick={handleLogout}>
+              <Link href='/'><a onClick={handleLogout}>
                 Logout
-              </a>
+              </a> </Link>
             )}
           </li>
         </ul>
