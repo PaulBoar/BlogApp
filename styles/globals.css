@@ -74,7 +74,7 @@ footer p {
   border-radius: 50%;
   border: 6px solid #ccc;
   border-top-color:royalblue;
-  z-index: 60;
+  z-index: 60000;
   animation: rotation .5s infinite linear;
 }
 

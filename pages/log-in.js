@@ -10,7 +10,7 @@ import {
 
 import styles from './log-in.module.css';
 
-function LogIn(props) {
+function LogIn({onIsLogged, onUser}) {
   const [wantRegister, setWantRegister] = useState(false);
   const [isLogged, setIsLogged] = useState(false);
   const [hasError, setHasError] = useState(false)
@@ -23,7 +23,6 @@ function LogIn(props) {
 
   const [cuser, setUser] = useState({});
   
-  const [onIsLogged, onUser] = props
 
 console.log(cuser?.email + ' USER')
 console.log(cuser)
@@ -61,7 +60,7 @@ console.log(cuser)
       setHasError(true)
       setTouched(true)
     }
-  }, [loginEmail, loginPassword]);
+  }, [loginEmail, loginPassword, cuser, onIsLogged, onUser]);
 
   useEffect(() => {
     onAuthStateChanged(auth, (currentUser) => {

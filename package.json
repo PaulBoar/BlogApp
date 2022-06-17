@@ -26,6 +26,10 @@
   "devDependencies": {
     "eslint": "8.17.0",
     "eslint-config-next": "12.1.6",
+    "eslint-plugin-react": "^7.30.0",
     "gh-pages": "^4.0.0"
+  },
+  "extends": {
+    "plugin": "react/recommended"
   }
 }
