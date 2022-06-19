@@ -1,5 +1,5 @@
 .not-found {
-  height: 80.25vh;
+  height: 89.5vh;
   background-color: #666;
   display: flex;
   justify-content: center;
@@ -24,7 +24,7 @@
 
 @media (min-width: 768px) {
   .not-found {
-    height: 80.7vh;
+    height: 93.3vh;
   }
 
   .info {

@@ -22,6 +22,9 @@ function BurgerMenu({ logged, isOpen, onClose }) {
       <Link href='/about'>
         <a onClick={closeBurgerMenu}>About</a>
       </Link>
+      <Link href='/contact'>
+        <a onClick={closeBurgerMenu}>Contact</a>
+      </Link>
       {!logged ? (
         <Link href='/log-in'>
           <a onClick={closeBurgerMenu}>Login</a>
