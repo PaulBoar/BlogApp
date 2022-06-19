@@ -35,7 +35,7 @@ console.log(user?.user?.email)
   }
   useEffect(() => {
     fetchComments();
-  });
+  }, []);
 
   async function postComments(comment, user ) {
     if (comment === '') return
@@ -72,6 +72,7 @@ console.log(logged)
   return (
     <div className={styles.forum}>
       <div className={styles.comments}>
+        <h3>Comments</h3>
         {comments &&
           comments.map((com) => {
             return <div key={com.id} className={styles.comment}><p>{com.comment} </p><span>by {com.author?.split('@',1)[0]}</span></div>;
