@@ -5,7 +5,7 @@
  justify-content: center;
  align-items: center;
  background: #aaa;
- height: 89.6vh;
+ height: 100vh;
  background-image: url(../public/imgs/loginImage.jpg);
  background-repeat: no-repeat;
  background-size: cover;
@@ -110,9 +110,6 @@
 }
 
 @media (min-width: 768px) {
- .container {
-  height: 93.3vh;
- }
  .box {
   min-width: 40%;
  }
