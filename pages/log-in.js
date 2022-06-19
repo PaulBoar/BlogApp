@@ -23,7 +23,6 @@ function LogIn({onIsLogged, onUser}) {
 
   const [cuser, setUser] = useState({});
   
-
 console.log(cuser?.email + ' USER')
 console.log(cuser)
 
@@ -38,8 +37,7 @@ console.log(cuser)
       );
       setIsLogged(true);
       onIsLogged(true);
-      console.log(user.email)
-      onUser(user.email)
+      await onUser(user)
     } catch (error) {
       console.log(error);
     }
@@ -82,7 +80,6 @@ console.log(cuser)
   const blurHandler = () => {
     setTouched(false)
   }
-
 
   const inputClasses = hasError && touched ? `${styles.invalid}` : ''
 
