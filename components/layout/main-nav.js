@@ -11,7 +11,6 @@ function MainNav(props) {
   const [isLogged, setIsLogged] = useState(false);
   const [showBurgerMenu, setShowBurgerMenu] = useState(false);
 
-
   useEffect(() => {
     if (props.user) {
       setIsLogged(props.logged);
@@ -32,9 +31,29 @@ function MainNav(props) {
     setShowBurgerMenu(false)
   }
 
+  //logo scroll when active
+  const [navbar, setNavbar] = useState(false)
+
+  //navbar scroll changeBackground function
+  const changeBackground = () => {
+    console.log(window.scrollY)
+    if (window.scrollY >= 66) {
+      setNavbar(true)
+    } else {
+      setNavbar(false)
+    }
+  }
+
+  useEffect(() => {
+    changeBackground()
+    // adding the event when scroll change background
+    window.addEventListener("scroll", changeBackground)
+  }, [])
+
+const headerStyles = !navbar ? `${styles.header}` : `${styles.header} ${styles.lol}`
  
   return (
-    <header className={styles.header}>
+    <header className={headerStyles} >
       <Link href='/'>
         <a className={styles.logo}>
           <div className={styles.logo}>

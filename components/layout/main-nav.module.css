@@ -1,5 +1,5 @@
 .header {
-  position: relative;
+  position: fixed;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -9,7 +9,9 @@
   z-index: 10000;
   transition: 0.3s;
 }
-
+.lol {
+  background-color: rgb(75, 90, 82);
+}
 .logo {
   font-size: 2.25rem;
   font-weight: bold;

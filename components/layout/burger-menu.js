@@ -4,6 +4,7 @@ import styles from './burger-menu.module.css';
 
 function BurgerMenu({ logged, isOpen, onClose }) {
   const closeBurgerMenu = () => {
+    window.scrollTo(500, 500)
    onClose()
   }
 
