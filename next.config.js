@@ -1,10 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-}
-
-module.exports = {
   images: {
-    domains: ["images.ctfassets.net"]
+    loader: "akamai",
+    path: "",
   }
 }
+
+module.exports = nextConfig;
+ 
