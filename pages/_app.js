@@ -50,7 +50,7 @@ function MyApp({ Component, pageProps }) {
     <>
       <Head>
         <meta
-          http-equiv='Content-Security-Policy'
+          httpEquiv='Content-Security-Policy'
           content="default-src 'self' https: ; object-src 'none'"
         />
       </Head>
