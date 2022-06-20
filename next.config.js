@@ -2,12 +2,21 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    loader: "akamai",
-    path: "",
+    loader: 'akamai',
+    path: '',
   },
-  basePath: "/BlogApp",
-  assetPrefix: "/BlogApp"
-}
+  headers: {
+    source: '/',
+    headers: [
+      {
+        key: 'Content-Security-Policy',
+        value:
+          "default-src 'self' https: ; script-src 'self' ; object-src 'none'",
+      },
+    ],
+  },
+  basePath: '/BlogApp',
+  assetPrefix: '/BlogApp',
+};
 
 module.exports = nextConfig;
- 
