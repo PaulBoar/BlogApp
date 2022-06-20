@@ -50,7 +50,7 @@ function Post({ blog, isLogged, user }) {
     <section className={styles['blog-post']}>
       <div className={styles.image}>
         <Image
-          src={`http:${featuredImage.fields.file.url}`}
+          src={`https:${featuredImage.fields.file.url}`}
           width={720}
           height={400}
           alt='post image'
