@@ -4,13 +4,13 @@ import { Fragment } from "react"
 function About() {
   return (
     <Fragment>
-    <Head>
+    {/* <Head>
     <title>All Blog Posts</title>
     <meta    
       name='Blog App'
       content='Blog posts'
     />
-    </Head>
+    </Head> */}
     <div>about</div>
     </Fragment>
   )

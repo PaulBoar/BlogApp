@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import Head from 'next/head';
+// import Head from 'next/head';
 import { createClient } from 'contentful';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
@@ -49,13 +49,13 @@ function Post({ blog, isLogged, user }) {
 
   return (
     <>
-    <Head>
+    {/* <Head>
     <title>{title}</title>
     <meta    
       name={title}
       content={slug}
     />
-    </Head>
+    </Head> */}
     <section className={styles['blog-post']}>
       <div className={styles.image}>
         <Image
