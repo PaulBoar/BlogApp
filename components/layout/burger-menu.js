@@ -6,7 +6,7 @@ function BurgerMenu({ logged, isOpen, onClose }) {
   const closeBurgerMenu = () => {
    onClose()
   }
-
+  console.log(isOpen)
   return (
     <nav
       className={styles['burger-menu']}

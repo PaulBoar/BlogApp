@@ -15,6 +15,7 @@ function PostItem({ post }) {
   });
 
   const pathLink = `/posts/${slug}`;
+  console.log(thumbnail.fields.file.url)
 
   return (
     <li>
@@ -22,7 +23,7 @@ function PostItem({ post }) {
             <Link href={pathLink}>
           <div className={styles.image}>
             <Image
-              src={`http:${thumbnail.fields.file.url}`}
+              src={`https:${thumbnail.fields.file.url}`}
               alt={title}
               width={400}
               height={215}
@@ -48,3 +49,8 @@ function PostItem({ post }) {
 }
 
 export default PostItem;
+
+
+// "//images.ctfassets.net/b4jprng2bg3x/69BnO8f8ou7TPHLm3wPR2e/1cf8427989891b942de87ff56d644d71/buddhism_t.jpg"
+
+// https://images.ctfassets.net/b4jprng2bg3x/69BnO8f8ou7TPHLm3wPR2e/1cf8427989891b942de87ff56d644d71/buddhism_t.jpg?imwidth=750
