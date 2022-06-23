@@ -7,9 +7,7 @@ export async function getStaticProps() {
 
   const client = createClient({
    space: process.env.CONTENTFUL_SPACE_ID,
-  // space: 'b4jprng2bg3x',
   accessToken: process.env.CONTENTFUL_ACCESS_KEY,
-  // accessToken: 'WETw-UQFoMNtZRbTT-cd9-YLivrYEZiQa2eOesiBqVM',
   })
 
   const res = await client.getEntries({content_type: 'blog'})

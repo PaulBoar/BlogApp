@@ -25,14 +25,13 @@ console.log(user?.user?.email)
       `https://blogapp-c6647-default-rtdb.firebaseio.com/comments/${slug}.json`
     );
     const data = await res.json();
-    console.log('fetchin');
 
     for (const key in data) {
       loadedComments.push({ id: key, comment: data[key].comment, author: data[key].author });
     }
     setComments(loadedComments);
-    console.log(loadedComments)
   }
+
   useEffect(() => {
     fetchComments();
   }, []);
@@ -50,9 +49,7 @@ console.log(user?.user?.email)
       }
     );
     const data = await res.json();
-    console.log(data);
   }
-  console.log(comment);
 
   const handleRemove = async (i) => {
     const res = await fetch(
@@ -65,10 +62,8 @@ console.log(user?.user?.email)
         },
       }
     );
-    console.log(slug)
     const data = await res.json();
   }
-console.log(logged)
   return (
     <div className={styles.forum}>
       <div className={styles.comments}>

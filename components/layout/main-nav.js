@@ -10,7 +10,6 @@ function MainNav(props) {
   const [navbar, setNavbar] = useState(false);
 
   const changeBackground = () => {
-    console.log(window.scrollY);
     if (window.scrollY >= 66) {
       setNavbar(true);
     } else {
@@ -34,12 +33,10 @@ function MainNav(props) {
   };
 
   const handleBurgerMenu = () => {
-    console.log('lewp');
     setShowBurgerMenu((prev) => !prev);
   };
 
   const handleClose = () => {
-    console.log('lewp');
     setShowBurgerMenu(false);
   };
 
