@@ -11,7 +11,7 @@ function About() {
       content='Blog posts'
     />
     </Head> */}
-    <div>about</div>
+    <div>aboutKUZWA</div>
     </Fragment>
   )
 }
