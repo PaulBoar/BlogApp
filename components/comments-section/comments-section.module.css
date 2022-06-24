@@ -90,13 +90,10 @@
   .form {
    margin-bottom: 2rem;
   }
- .input {
-  width: 80%;
- }
+
  .btn{
   background-color: transparent;
   border: 2px solid rgba(70, 135, 255, 0.9);
   color: rgb(70, 135, 255);
-  margin-left: 1rem;
  }
 }
