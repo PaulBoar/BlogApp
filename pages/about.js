@@ -1,18 +1,17 @@
-import Head from "next/head"
-import { Fragment } from "react"
+import styles from './about.module.css'
 
 function About() {
   return (
-    <Fragment>
-    {/* <Head>
-    <title>All Blog Posts</title>
-    <meta    
-      name='Blog App'
-      content='Blog posts'
-    />
-    </Head> */}
-    <div>aboutKUZWA</div>
-    </Fragment>
+   
+    <div className={styles.about}>
+    <div className={styles.content}>
+      <div>
+      <h2>About Mindworks</h2>
+      <p>We are team of journalists writting about scientific methods which can improve your performance and general well-being.</p>
+      </div>
+      <div className={styles.image}></div>
+    </div>
+    </div>
   )
 }
 
