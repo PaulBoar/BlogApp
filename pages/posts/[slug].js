@@ -1,5 +1,4 @@
 import Image from 'next/image';
-// import Head from 'next/head';
 import { createClient } from 'contentful';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
@@ -46,20 +45,21 @@ function Post({ blog, isLogged, user }) {
 
   console.log(user?.email + ' email?');
   
-
+  const contentfulLoader = ({ src, quality, width }) => {
+    const params = [`w=${width}`];
+  
+    if (quality) {
+      params.push(`q=${quality}`);
+    }
+    return `${src}?${params.join('&')}`;
+  };
+  
   return (
-    <>
-    {/* <Head>
-    <title>{title}</title>
-    <meta    
-      name={title}
-      content={slug}
-    />
-    </Head> */}
     <section className={styles['blog-post']}>
       <div className={styles.image}>
         <Image
           src={`http:${featuredImage.fields.file.url}`}
+          loader={contentfulLoader}
           width={720}
           height={400}
           alt='post image'
@@ -73,7 +73,6 @@ function Post({ blog, isLogged, user }) {
         <CommentsSection slug={slug} logged={isLogged} user={user} />
       </div>
     </section>
-    </>
   );
 }
 

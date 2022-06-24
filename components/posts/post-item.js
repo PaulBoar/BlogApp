@@ -15,7 +15,16 @@ function PostItem({ post }) {
   });
 
   const pathLink = `/posts/${slug}`;
-  console.log(thumbnail.fields.file.url)
+  console.log(`https:${thumbnail.fields.file.url}`)
+
+  const contentfulLoader = ({ src, quality, width }) => {
+    const params = [`w=${width}`];
+  
+    if (quality) {
+      params.push(`q=${quality}`);
+    }
+    return `${src}?${params.join('&')}`;
+  };
 
   return (
     <li>
@@ -24,6 +33,7 @@ function PostItem({ post }) {
           <div className={styles.image}>
             <Image
               src={`https:${thumbnail.fields.file.url}`}
+              loader={contentfulLoader}
               alt={title}
               width={400}
               height={215}
