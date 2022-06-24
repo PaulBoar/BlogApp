@@ -17,7 +17,7 @@ const nextConfig = {
       },
     ],
   },
-  basePath: '/BlogApp',
+  basePath: '',
   assetPrefix:'/BlogApp'
 };
 
