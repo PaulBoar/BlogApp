@@ -1,5 +1,11 @@
 .not-found {
-  height: 89.5vh;
+  /* height: 11.5vh; */
+  /* height: 100%; */
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
   background-color: #666;
   display: flex;
   justify-content: center;
