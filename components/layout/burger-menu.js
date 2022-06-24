@@ -6,7 +6,7 @@ function BurgerMenu({ logged, isOpen, onClose }) {
   const closeBurgerMenu = () => {
    onClose()
   }
-  console.log('deploy work plz')
+
   return (
     <nav
       className={styles['burger-menu']}
@@ -21,9 +21,6 @@ function BurgerMenu({ logged, isOpen, onClose }) {
       </Link>
       <Link href='/about'>
         <a onClick={closeBurgerMenu}>About</a>
-      </Link>
-      <Link href='/contact'>
-        <a onClick={closeBurgerMenu}>Contact</a>
       </Link>
       {!logged ? (
         <Link href='/log-in'>
