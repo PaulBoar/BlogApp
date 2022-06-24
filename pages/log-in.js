@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useCallback } from 'react';
-// import Head from 'next/head';
 import Link from 'next/dist/client/link.js';
 import { auth } from '../firebase-config.js';
 import {
@@ -86,13 +85,6 @@ console.log(cuser)
 
   let logIn = (
     <>
-    {/* <Head>
-    <title>Login</title>
-    <meta    
-      name='Login'
-      content='Login'
-    />
-    </Head> */}
       <h2>Login</h2>
       <form onSubmit={handleLogin}>
         <label>Email</label>

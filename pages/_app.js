@@ -1,4 +1,3 @@
-// import Head from 'next/head';
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Layout from '../components/layout/layout';
@@ -47,16 +46,6 @@ function MyApp({ Component, pageProps }) {
   };
 
   return (
-    <>
-      {/* <Head>
-        <title>All Blog Posts</title>
-        <meta
-          // httpEquiv='Content-Security-Policy'
-          // content="default-src 'self' https: ; object-src 'none'"
-          name='Blog App'
-          content='Blog posts'
-        />
-      </Head> */}
       <Layout isLogged={isLog} onLogout={handleLogout} user={user}>
         <Loading />
         <Component
@@ -67,7 +56,6 @@ function MyApp({ Component, pageProps }) {
           user={user}
         />
       </Layout>
-    </>
   );
 }
 
