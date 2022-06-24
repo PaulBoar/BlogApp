@@ -6,7 +6,7 @@ const nextConfig = {
     path: '',
   },
   headers: {
-    source: '/BlogApp',
+    source: '/',
     headers: [
       {
         key: 'Content-Security-Policy',
@@ -15,8 +15,8 @@ const nextConfig = {
       },
     ],
   },
-  basePath: '/BlogApp',
-  assetPrefix: '/BlogApp',
+  basePath: '/',
+  assetPrefix: '/',
 };
 
 module.exports = nextConfig;
