@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { createClient } from 'contentful';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import SETTINGS from '../../.env.local'
 
 import styles from './[slug].module.css';
 import CommentsSection from '../../components/comments-section/comments-section';
