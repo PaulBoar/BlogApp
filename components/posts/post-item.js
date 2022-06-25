@@ -15,7 +15,6 @@ function PostItem({ post }) {
   });
 
   const pathLink = `/posts/${slug}`;
-  console.log(`https:${thumbnail.fields.file.url}`)
 
   const contentfulLoader = ({ src, quality, width }) => {
     const params = [`w=${width}`];

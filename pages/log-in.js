@@ -22,13 +22,9 @@ function LogIn({onIsLogged, onUser}) {
   const [loginPassword, setLoginPassword] = useState('');
 
   const [cuser, setUser] = useState({});
-  
-console.log(cuser?.email + ' USER')
-console.log(cuser)
 
   const handleRegister = async (e) => {
     e.preventDefault();
-    console.log('first');
     try {
       const user = await createUserWithEmailAndPassword(
         auth,
@@ -42,19 +38,14 @@ console.log(cuser)
       console.log(error);
     }
   };
-  console.log(cuser?.email);
   const handleLogin = useCallback(async (e) => {
     e.preventDefault();
-    console.log('lol');
     try {
       const user = await signInWithEmailAndPassword(auth, loginEmail, loginPassword);
       setIsLogged(true);
-      console.log(user)
       onIsLogged(true);
       await onUser(user)
-      console.log(cuser);
     } catch (error) {
-      console.log(error);
       setHasError(true)
       setTouched(true)
     }
@@ -68,7 +59,6 @@ console.log(cuser)
 
   useEffect(() => {
   if (!isLogged) {
-    console.log('logging out')
      signOut(auth)
   }}, [isLogged])
 

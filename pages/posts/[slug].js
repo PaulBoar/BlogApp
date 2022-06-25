@@ -42,8 +42,6 @@ export const getStaticProps = async ({ params }) => {
 
 function Post({ blog, isLogged, user }) {
   const { title, featuredImage, postContent, slug } = blog.fields;
-
-  console.log(user?.email + ' email?');
   
   const contentfulLoader = ({ src, quality, width }) => {
     const params = [`w=${width}`];
@@ -58,7 +56,7 @@ function Post({ blog, isLogged, user }) {
     <section className={styles['blog-post']}>
       <div className={styles.image}>
         <Image
-          src={`http:${featuredImage.fields.file.url}`}
+          src={`https:${featuredImage.fields.file.url}`}
           loader={contentfulLoader}
           width={720}
           height={400}

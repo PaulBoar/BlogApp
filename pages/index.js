@@ -23,7 +23,6 @@ export async function getStaticProps() {
 }
 
 function HomePage({blogPost}) {
-  console.log(blogPost)
   return (
     <Fragment>
       <HeroHeader />

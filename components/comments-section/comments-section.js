@@ -6,7 +6,6 @@ import styles from './comments-section.module.css';
 function CommentsSection({ slug, logged, user }) {
   const [comment, setComment] = useState('');
   const [comments, setComments] = useState([]);
-console.log(user?.user?.email)
   const handleAddComment = (e) => {
     setComment(e.target.value);
   };
