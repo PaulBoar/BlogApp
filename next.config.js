@@ -17,8 +17,8 @@ const nextConfig = {
       },
     ],
   },
-  // basePath: '',
-  // assetPrefix:'/BlogApp'
+  basePath: '/BlogApp',
+  assetPrefix:'/BlogApp/'
 };
 
 module.exports = nextConfig;
