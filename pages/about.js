@@ -1,5 +1,4 @@
 import styles from './about.module.css'
-import Image from 'next/image'
 
 function About() {
 
@@ -21,13 +20,6 @@ function About() {
       <p>We are team of journalists writting about scientific methods which can improve your performance and general well-being.</p>
       </div>
       <div className={styles.image}>
-        <Image
-        src={'../public/imgs/aboutpng.png'}
-        loader={contentfulLoader}
-        alt={'working crew'}
-        width={400}
-        height={215}
-        layout='responsive' />
       </div>
     </div>
     </div>
