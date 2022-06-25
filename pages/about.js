@@ -1,5 +1,5 @@
 import styles from './about.module.css'
-import Image from 'next/iamge'
+import Image from 'next/image'
 
 function About() {
 
