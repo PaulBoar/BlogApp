@@ -1,16 +1,13 @@
 import Image from 'next/image';
 import { createClient } from 'contentful';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import SETTINGS from '../../.env.local'
 
 import styles from './[slug].module.css';
 import CommentsSection from '../../components/comments-section/comments-section';
 
 const client = createClient({
-    // space: process.env.CONTENTFUL_SPACE_ID,
-    space: SETTINGS.CONTENTFUL_SPACE_ID,
-    // accessToken: process.env.CONTENTFUL_ACCESS_KEY,
-    accessToken: SETTINGS.CONTENTFUL_ACCESS_KEY,
+    space: process.env.CONTENTFUL_SPACE_ID,
+    accessToken: process.env.CONTENTFUL_ACCESS_KEY,
 });
 
 export const getStaticPaths = async () => {
