@@ -6,8 +6,10 @@ import styles from './[slug].module.css';
 import CommentsSection from '../../components/comments-section/comments-section';
 
 const client = createClient({
-    space: process.env.CONTENTFUL_SPACE_ID,
-    accessToken: process.env.CONTENTFUL_ACCESS_KEY,
+    // space: process.env.CONTENTFUL_SPACE_ID,
+    // accessToken: process.env.CONTENTFUL_ACCESS_KEY,
+    space: 'b4jprng2bg3x',
+    accessToken: 'WETw-UQFoMNtZRbTT-cd9-YLivrYEZiQa2eOesiBqVM',
 });
 
 export const getStaticPaths = async () => {
