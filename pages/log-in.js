@@ -23,6 +23,15 @@ function LogIn({onIsLogged, onUser}) {
 
   const [cuser, setUser] = useState({});
 
+  useEffect(() => {
+  if (localStorage.getItem('user')) {
+    setIsLogged(true)
+    onIsLogged(true);
+    onUser(localStorage.getItem('user'))
+    console.log('useefect')
+  }
+}, [])
+
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
@@ -38,12 +47,14 @@ function LogIn({onIsLogged, onUser}) {
       console.log(error);
     }
   };
+
   const handleLogin = useCallback(async (e) => {
     e.preventDefault();
     try {
       const user = await signInWithEmailAndPassword(auth, loginEmail, loginPassword);
       setIsLogged(true);
       onIsLogged(true);
+      localStorage.setItem('user', {loginEmail, loginPassword})
       await onUser(user)
     } catch (error) {
       setHasError(true)
@@ -64,7 +75,10 @@ function LogIn({onIsLogged, onUser}) {
 
   const logout =  () => {
      signOut(auth)
-    onUser('')
+     setIsLogged(false);
+      onIsLogged(false);
+      // localStorage.clear();
+     onUser('')
   };
 
   const blurHandler = () => {

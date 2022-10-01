@@ -1,5 +1,4 @@
 import PostItem from './post-item'
-import Posts from '../home-page/posts'
 
 import styles from './posts-grid.module.css'
 
