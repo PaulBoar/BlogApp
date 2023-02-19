@@ -4,11 +4,13 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import styles from './[slug].module.css';
 import CommentsSection from '../../components/comments-section/comments-section';
 
+
+let client 
 if (
 	process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID &&
 	process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_KEY
 ) {
-	const client = createClient({
+	 client = createClient({
 		space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID,
 		accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_KEY,
 	});
