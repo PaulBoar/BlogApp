@@ -5,16 +5,10 @@ import styles from './[slug].module.css';
 import CommentsSection from '../../components/comments-section/comments-section';
 
 
-let client 
-if (
-	process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID &&
-	process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_KEY
-) {
 	 client = createClient({
 		space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID,
 		accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_KEY,
 	});
-}
 
 export const getStaticPaths = async () => {
 	const res = await client.getEntries({
