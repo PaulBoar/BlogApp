@@ -36,5 +36,5 @@ jobs:
           branch: gh-pages # The branch the action should deploy to.
           folder: out # The folder the action should deploy.
         env:
-          CONTENTFUL_SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
-          CONTENTFUL_ACCESS_KEY: ${{ secrets.CONTENTFUL_ACCESS_KEY }}
+          NEXT_PUBLIC_CONTENTFUL_SPACE_ID: ${{ secrets.NEXT_PUBLIC_CONTENTFUL_SPACE_ID }}
+          NEXT_PUBLIC_CONTENTFUL_ACCESS_KEY: ${{ secrets.NEXT_PUBLIC_CONTENTFUL_ACCESS_KEY }}
