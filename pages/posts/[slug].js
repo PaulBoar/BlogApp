@@ -1,8 +1,6 @@
 import Image from 'next/image';
 import { createClient } from 'contentful';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import contentful_space from '../../.github/workflows/node.js.yml'
-import contentful_token from '../../.github/workflows/node.js.yml'
 import styles from './[slug].module.css';
 import CommentsSection from '../../components/comments-section/comments-section';
 
