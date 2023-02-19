@@ -5,10 +5,8 @@ import styles from './[slug].module.css';
 import CommentsSection from '../../components/comments-section/comments-section';
 
 const client = createClient({
-    space: contentful_space,
-    accessToken: contentful_token,
-    // space: process.env.CONTENTFUL_SPACE_ID,
-    // accessToken: process.env.CONTENTFUL_ACCESS_KEY,
+    space: process.env.CONTENTFUL_SPACE_ID,
+    accessToken: process.env.CONTENTFUL_ACCESS_KEY,
 });
 
 export const getStaticPaths = async () => {
