@@ -4,8 +4,8 @@
 const nextConfig = {
   reactStrictMode: true,
   env:{
-    MYACCESSTOKEN : process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID,
-    MYSPACEID: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_KEY,
+    NEXT_PUBLIC_CONTENTFUL_SPACE_ID : process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID,
+    NEXT_PUBLIC_CONTENTFUL_ACCESS_KEY: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_KEY,
   },
   images: {
     loader: 'akamai',
